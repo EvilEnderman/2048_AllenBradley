@@ -1,0 +1,9 @@
+FUNCTION resetMerged
+FOR x := 0 TO 3 BY 1 DO
+	FOR y := 0 TO 3 BY 1 DO
+		diMergedArray[x,y] := FALSE;
+	END_FOR;
+END_FOR;
+
+resetMerged := TRUE;
+END_FUNCTION

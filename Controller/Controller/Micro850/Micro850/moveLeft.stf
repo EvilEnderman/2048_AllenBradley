@@ -1,0 +1,49 @@
+FUNCTION moveLeft
+// MoveLeft
+FOR iter := 0 TO 3 BY 1 DO
+	FOR x := 1 TO 3 BY 1 DO
+		FOR y := 0 TO 3 BY 1 DO
+			//empty
+			
+			//bMerged := FALSE;		
+	        //FOR merTest := 0 TO 3 BY 1 DO
+				//IF diMergedArray[y,merTest] = TRUE THEN
+					//bMerged := TRUE;
+				//END_IF;
+			//END_FOR;
+			
+			IF diNumArray[y,x-1 ] = 0 THEN
+	            diNumArray[y,x-1 ] := diNumArray[y,x];
+
+				FOR x2 := x TO 2 BY 1 DO
+	                diNumArray[y,x] := diNumArray[y,x+1 ];
+				END_FOR;
+
+	            
+	            //diNumArray[2,x] := diNumArray[3,x];
+	            diNumArray[y,x] := 0;
+
+			
+			
+			//Same and not already merged
+	        ELSIF diNumArray[y,x-1 ] = diNumArray[y,x] AND diMergedArray[y,x-1 ] = FALSE AND diMergedArray[y,x] = FALSE THEN
+	            //double
+				diNumArray[y,x-1 ] := (diNumArray[y,x] * 2);
+				udiScore := udiScore + ANY_TO_UDINT(diNumArray[y,x] * 2);
+				//track merge
+	            diMergedArray[y,x-1 ] := TRUE;
+				
+	            diNumArray[y,x] := 0;
+
+				
+	        END_IF;
+			
+		END_FOR;
+	END_FOR;
+END_FOR;
+moveLeft := TRUE;
+
+//resetMerged();
+//addRandom();
+
+END_FUNCTION

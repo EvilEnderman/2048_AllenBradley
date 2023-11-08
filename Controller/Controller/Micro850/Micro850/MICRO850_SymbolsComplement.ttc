@@ -1,0 +1,8 @@
+[BEGIN FB INPUTS]
+I1=micro850.micro850.prog1/waitton.in,0x47A,BOOL
+I2=micro850.micro850.prog1/waitton.pt,0x1DA0,TIME
+I3=micro850.micro850.prog1/rtrigdown.clk,0x1BEE,BOOL
+I4=micro850.micro850.prog1/rtrigleft.clk,0x1BEE,BOOL
+I5=micro850.micro850.prog1/rtrigright.clk,0x1BEE,BOOL
+I6=micro850.micro850.prog1/rtrigup.clk,0x1BEE,BOOL
+[END]

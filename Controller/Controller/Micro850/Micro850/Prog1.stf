@@ -1,0 +1,93 @@
+PROGRAM Prog1
+waitTon(bWait,T#1200ms);
+IF waitTon.Q = TRUE THEN
+	FOR row1 := 0 TO 3 BY 1 DO
+		FOR column1 := 0 TO 3 BY 1 DO
+			bNewTile[row1,column1] := FALSE;
+		END_FOR;
+	END_FOR;
+	bWait := FALSE;
+END_IF;
+
+// Initial board state
+IF (__SYSVA_FIRST_SCAN = TRUE OR button.bReset) THEN
+	FOR row := 0 TO 3 BY 1 DO
+		FOR column := 0 TO 3 BY 1 DO
+			diNumArray[row,column] := 0;
+		END_FOR;
+	END_FOR;
+	firstRun := TRUE;
+	added := FALSE;
+	addAnother := TRUE;
+	Test := resetMerged();
+	lose := FALSE;
+	udiScore := 0;
+END_IF;
+
+IF addAnother = TRUE AND added = TRUE THEN
+	added := FALSE;
+	addAnother := FALSE;
+END_IF;
+
+
+
+rtrigDown(Button.bDown);
+rtrigLeft(Button.bLeft);
+rtrigRight(Button.bRight);
+rTrigUp(Button.bUp);
+
+IF rtrigLeft.Q = TRUE THEN
+	diPrevArray := diNumArray;
+	Test := moveLeft();
+	Test := resetMerged();
+	added := NOT(checkMovePossible());
+	lose := HaveLost();
+	firstRun := FALSE;
+END_IF;
+
+IF rtrigDown.Q = TRUE THEN
+	diPrevArray := diNumArray;
+	Test := moveDown();
+	Test := resetMerged();
+	added := NOT(checkMovePossible());
+	lose := HaveLost();
+	firstRun := FALSE;
+END_IF;
+
+IF rTrigUp.Q = TRUE THEN
+	diPrevArray := diNumArray;
+	Test := moveUp();
+	Test := resetMerged();
+	added := NOT(checkMovePossible());
+	lose := HaveLost();
+	firstRun := FALSE;
+END_IF;
+
+IF rtrigRight.Q = TRUE THEN
+	diPrevArray := diNumArray;
+	Test := moveRight();
+	Test := resetMerged();
+	added := NOT(checkMovePossible());
+	lose := HaveLost();
+	firstRun := FALSE;
+END_IF;
+
+IF added = FALSE THEN
+	x := RAND(4);
+    y := RAND(4);
+
+    value := ((RAND(2)+ 1)*2);
+
+    IF diNumArray[y,x] = 0 THEN
+        diNumArray[y,x] := value;
+        added := True;
+		lose := HaveLost();
+		bNewTile[y,x] := NOT(firstRun);
+		bWait := TRUE;
+	END_IF;
+END_IF;
+
+
+
+
+END_PROGRAM

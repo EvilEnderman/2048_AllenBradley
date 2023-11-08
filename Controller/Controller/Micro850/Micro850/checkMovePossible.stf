@@ -1,0 +1,10 @@
+FUNCTION checkMovePossible
+checkMovePossible := FALSE;
+FOR row := 0 TO 3 BY 1 DO
+	FOR column := 0 TO 3 BY 1 DO
+		IF diNumArray[row,column] <> diPrevArray[row,column] THEN
+			checkMovePossible := TRUE;
+		END_IF;
+	END_FOR;
+END_FOR;
+END_FUNCTION

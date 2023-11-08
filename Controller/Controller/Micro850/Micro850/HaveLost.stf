@@ -1,0 +1,32 @@
+FUNCTION HaveLost
+HaveLost := TRUE;
+
+//is the grid full?
+FOR column := 0 TO 3 BY 1 DO
+	FOR row := 0 TO 3 BY 1 DO
+		IF diNumArray[row,column] = 0 THEN
+			HaveLost := FALSE;
+		END_IF;
+	END_FOR;
+END_FOR;
+
+//if the grid is full, then can you merge?
+//downup
+FOR column := 0 TO 3 BY 1 DO
+	FOR row := 0 TO 2 BY 1 DO
+		IF diNumArray[row,column] = diNumArray[row+1,column] THEN
+			HaveLost := FALSE;
+		END_IF;
+	END_FOR;
+END_FOR;
+//leftright
+FOR column := 0 TO 2 BY 1 DO
+	FOR row := 0 TO 3 BY 1 DO
+		IF diNumArray[row,column] = diNumArray[row,column+1] THEN
+			HaveLost := FALSE;
+		END_IF;
+	END_FOR;
+END_FOR;
+
+
+END_FUNCTION

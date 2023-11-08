@@ -1,0 +1,18 @@
+---------- Controller change started: 2048_Backup1_1 ----------
+
+---------- Importing Project : Controller\Controller.acfproj ----------
+Changing controller type: 2080-LC30-24QBB (Version 12) to 2080-LC50-48QBB (Version 12)
+
+Import Controller Complete -- 0 Errors, 0 Warnings
+
+---------- Importing Project : PVc Project\PVc Project.acfproj ----------
+Import Project Complete -- 0 Errors, 0 Warnings
+
+---------- End of project conversion ----------
+
+The source project has been saved in 
+"C:\Users\jacks\Documents\CCW\2048_Backup1\2048_Backup1.ccwsln"
+
+Log file has been written in
+c:\users\jacks\documents\ccw\2048_backup1_1\Conversion-2023-11-08.txt
+========== Controller Change: 2 succeeded, 0 failed ==========

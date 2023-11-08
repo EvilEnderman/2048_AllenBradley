@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectElements>
+  <AcfElementGuid Guid="01068a46-63ba-4f77-ad67-81f6dbb6c3d9">
+    <File>moveDown.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="384c5406-82b0-42ba-9af8-61820f6880a4">
+    <File>checkMovePossible.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="4e13a409-9a52-4fab-b5d9-0dba477762b3">
+    <File>moveLeft.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="58cfc98a-1623-42c1-84ca-c4a5c6b7d0c6">
+    <File>HaveLost.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="6708565d-797c-4227-9a64-19881a2953fa">
+    <File>moveUp.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="9eee25e4-fc3f-4701-b4d1-ac38d61899ce">
+    <File>moveRight.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="f037bc67-425d-471f-8b82-54946d780c60">
+    <File>Prog1.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="f765c058-8246-450b-ba26-d1afe91a6918">
+    <File>resetMerged.AcfMlge</File>
+  </AcfElementGuid>
+</ProjectElements>
